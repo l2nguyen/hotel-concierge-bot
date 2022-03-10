@@ -1,0 +1,145 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi there
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: thank
+  examples: |
+    - thanks!
+    - thank you
+    - thanks a lot
+    - great thanks
+    - appreciate it
+    - cool thanks
+    - Cool. Thanks
+    - Great, thanks
+    - Thank you so much
+    - Thank's!
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cool thank you
+    - cool, thanks
+    - danke
+    - ok thanks
+    - ok thanks!
+    - perfect thank you
+    - thank u
+    - thank you anyways
+    - thanks
+    - thanks a bunch for everything
+    - thanks for the help
+    - thanks you
+    - thankyou
+    - thnks
+    - thx
+    - yes thanks
+    - no thanks
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no I do not
+- intent: book_room
+  examples: |
+    - I want to book a room
+    - book a room
+    - I would like to book a room
+    - find me a room
+    - please find me a room
+    - I want to book a hotel room
+    - book me a room
+    - i want to book a room
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - is this ai?
+- intent: request_clean_room
+  examples: |
+    - can you ask for someone to clean the clean the room?
+    - request for room clean
+    - room cleaning
+    - i want to have my room cleaned
+    - could you send someone to clean the room
+    - send someone to clean the room
+    - need someone to clean the room
+    - i would like to request for room cleaning
+    - request room cleaning service
+    - can you send someone to clean the room?
+    - my room needs to be cleaned
+    - please send someone to clean my room
+    - i would like to have my room cleaned
+    - i need my room cleaned
+    - send someone to clean my room
+- intent: need_urgent
+  examples: |
+    - urgently
+    - now
+    - could you send someone right now?
+    - send someone right now
+    - required now
+    - needed now
+    - send them now
+    - it is urgent
+    - please send someone right now
+    - the requirement is urgent
+    - can you send someone as soon as possible
+    - as soon as possible
+    - immediately
+- intent: schedule_time
+  examples: |
+    - could you send someone after 2 hours?
+    - send someone after 3 hours
+    - in two hours time
+    - at 18:00
+    - at 17h
+    - after 10 AM
+    - at 2 PM
+    - around 9 AM
+    - around 2 hours later
+    - at 9 AM tomorrow
+    - tomorrow at 10
+    - later tonight at 20h
+    - later at 8 PM 
