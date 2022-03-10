@@ -1,5 +1,7 @@
 # ignore models
 models/
+# ignore rasa cache
+.rasa/cache/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

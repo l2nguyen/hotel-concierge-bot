@@ -2,23 +2,21 @@ version: '3.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
+- thank
+- faq:
+    is_retrieval_intent: true
 - greet
 - goodbye
-- thank
 - affirm
 - deny
 - bot_challenge
-# request services
 - request_clean_room
-# general time
 - need_urgent
 - schedule_time
-
 responses:
   utter_greet:
-  - text: Hello, I am Hotel California's virtual assistant. How can I help?
+  - text: Hello, I am the Acorn Hotel's virtual assistant. How can I help?
   utter_noproblem:
   - text: You're welcome
   - text: No problem. Happy to help.
@@ -28,11 +26,8 @@ responses:
   - text: Is there anything else I can help you with?
   utter_heretohelp:
   - text: OK. Feel free to ask me for something at anytime.
-  utter_default:
-  - text: I didn't quite understand that. Could you rephrase?
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-# requests
   utter_clean_room:
   - text: When do you want you room to be cleaned?
   utter_rightaway:
@@ -40,14 +35,19 @@ responses:
   - text: Ok, we will send someone to take care of this right away.
   utter_schedule_time:
   - text: Someone will be sent at your requested time.
+  utter_faq/ask_check_in_time:
+  - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
+  utter_faq/ask_check_out_time:
+  - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage for you at the reception.
 actions:
 - utter_anythingelse
 - utter_booking_slots
-- utter_default
-- utter_goodbye
-- utter_heretohelp
-- utter_greet
-- utter_noproblem
 - utter_clean_room
+- utter_default
+- utter_faq
+- utter_goodbye
+- utter_greet
+- utter_heretohelp
+- utter_noproblem
 - utter_rightaway
 - utter_schedule_time

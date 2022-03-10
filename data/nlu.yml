@@ -79,16 +79,6 @@ nlu:
     - no way
     - not really
     - no I do not
-- intent: book_room
-  examples: |
-    - I want to book a room
-    - book a room
-    - I would like to book a room
-    - find me a room
-    - please find me a room
-    - I want to book a hotel room
-    - book me a room
-    - i want to book a room
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -142,4 +132,26 @@ nlu:
     - at 9 AM tomorrow
     - tomorrow at 10
     - later tonight at 20h
-    - later at 8 PM 
+    - later at 8 PM
+- intent: faq/ask_check_in_time
+  examples: |
+    - when is check in time?
+    - what time is check in?
+    - what is check-in time?
+    - when is check-in?
+    - tell me your check in time
+    - tell me the hotel's check in time
+    - check in time
+    - i would like to know when check in is
+    - i want to know when i can check in
+    - can you tell me the hotel's check in time
+- intent: faq/ask_check_out_time
+  examples: |
+    - when do i need to check out by?
+    - when is check out?
+    - what time is check out?
+    - check out time
+    - can you tell me when check out is?
+    - tell me what the check out time is
+    - when is checkout?
+    - when time is check-out?

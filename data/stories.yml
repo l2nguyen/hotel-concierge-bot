@@ -31,4 +31,3 @@ stories:
   - action: utter_anythingelse
   - intent: deny
   - action: utter_heretohelp
-
