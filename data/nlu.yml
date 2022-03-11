@@ -118,6 +118,7 @@ nlu:
     - can you send someone as soon as possible
     - as soon as possible
     - immediately
+    - right away
 - intent: schedule_time
   examples: |
     - could you send someone after 2 hours?
@@ -133,6 +134,15 @@ nlu:
     - tomorrow at 10
     - later tonight at 20h
     - later at 8 PM
+- intent: inform_room_number
+  examples: |
+    - [203](room_number)
+    - [6](room_number)
+    - i am in room [56](room_number)
+    - my room number is [402](room_number)
+    - room [310](room_number)
+    - it is [602](room_number)
+    - [10](room_number)
 - intent: faq/ask_check_in_time
   examples: |
     - when is check in time?

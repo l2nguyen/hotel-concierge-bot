@@ -13,21 +13,35 @@ stories:
   - action: utter_noproblem
 
 # === SERVICES > todo: move into another file
-- story: request - clean room now
-  steps:
-  - intent: request_clean_room
-  - action: utter_clean_room
-  - intent: need_urgent
-  - action: utter_rightaway
-  - action: utter_anythingelse
-  - intent: deny
-  - action: utter_heretohelp
 - story: request - clean room at specified time 
   steps:
   - intent: request_clean_room
   - action: utter_clean_room
   - intent: schedule_time
-  - action: utter_schedule_time
+  - action: utter_ask_room_number
+  - intent: inform_room_number
+  - intent: inform_room_number
+    entities:
+    - room_number: '306'
+  - slot_was_set:
+    - room_number: '306'
+  - action: utter_schedule_time # todo: add something that records scheduled time
   - action: utter_anythingelse
   - intent: deny
   - action: utter_heretohelp
+
+- story: request - clean room now
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_clean_room
+  - action: utter_clean_room
+  - intent: need_urgent
+  - action: utter_ask_room_number
+  - intent: inform_room_number
+    entities:
+    - room_number: '10'
+  - slot_was_set:
+    - room_number: '10'
+  - action: utter_rightaway
+  - action: utter_anythingelse

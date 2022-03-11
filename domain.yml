@@ -3,17 +3,28 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- thank
+- request_clean_room
+- need_urgent
+- schedule_time
+- inform_room_number
+- greet
 - faq:
     is_retrieval_intent: true
-- greet
+- thank
 - goodbye
 - affirm
 - deny
 - bot_challenge
-- request_clean_room
-- need_urgent
-- schedule_time
+
+entities:
+- room_number
+slots:
+  room_number:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: room_number
 responses:
   utter_greet:
   - text: Hello, I am the Acorn Hotel's virtual assistant. How can I help?
@@ -34,7 +45,10 @@ responses:
   - text: Ok, we will take care of that right away.
   - text: Ok, we will send someone to take care of this right away.
   utter_schedule_time:
-  - text: Someone will be sent at your requested time.
+  - text: Ok, someone will be sent at your requested time.
+  utter_ask_room_number:
+  - text: What is your room number please?
+  - text: Can I have your room number please?
   utter_faq/ask_check_in_time:
   - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
   utter_faq/ask_check_out_time:
@@ -43,9 +57,10 @@ responses:
   - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
 actions:
 - utter_anythingelse
-- utter_faq
+- utter_ask_room_number
 - utter_clean_room
 - utter_default
+- utter_faq
 - utter_goodbye
 - utter_greet
 - utter_heretohelp
