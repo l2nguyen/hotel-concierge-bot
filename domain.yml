@@ -39,12 +39,13 @@ responses:
   - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
   utter_faq/ask_check_out_time:
   - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage for you at the reception.
+  utter_faq/ask_have_gym:
+  - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
 actions:
 - utter_anythingelse
-- utter_booking_slots
+- utter_faq
 - utter_clean_room
 - utter_default
-- utter_faq
 - utter_goodbye
 - utter_greet
 - utter_heretohelp
