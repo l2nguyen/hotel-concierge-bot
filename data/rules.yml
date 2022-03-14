@@ -15,4 +15,3 @@ rules:
   steps:
   - intent: faq
   - action: utter_faq
-  - action: utter_anythingelse
