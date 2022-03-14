@@ -20,7 +20,6 @@ stories:
   - intent: schedule_time
   - action: utter_ask_room_number
   - intent: inform_room_number
-  - intent: inform_room_number
     entities:
     - room_number: '306'
   - slot_was_set:

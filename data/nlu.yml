@@ -175,3 +175,20 @@ nlu:
     - tell me about the gym
     - when is the gym open?
     - what time is the gym open?
+- intent: faq/ask_have_restaurant
+  examples: |
+    - is there a restaurant?
+    - tell me about the hotel's restaurant
+    - does the hotel have a restaurant?
+    - can i find a restaurnat here?
+    - can you tell me about the restaurant in the hotel?
+    - is there a restaurant in this hotel?
+- intent: faq/ask_breakfast_info
+  examples: |
+    - is breakfast included?
+    - where is breakfast?
+    - what time is breakfast?
+    - where is breakfast served?
+    - when is breakfast served?
+    - do you serve breakfast?
+    - does the hotel offer breakfast?
