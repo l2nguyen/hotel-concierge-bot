@@ -103,6 +103,21 @@ nlu:
     - i would like to have my room cleaned
     - i need my room cleaned
     - send someone to clean my room
+- intent: request_item
+  examples: |
+    - can you bring an item to my room?
+    - i would like an item brought to my room please
+    - i need a [toothbrush](item) brought to my room?
+    - i would like some [water](item) brought to my room?
+    - we need more [towels](item)
+    - could you bring me a [razor](item)?
+    - i need some [tampons](item)
+    - i forgot my [toothbrush](item). can you bring one to my room?
+    - bring me more [shampoo](item)
+    - we ran out of [conditioner](item)
+    - we need another [pillow](item)
+    - we want more [shampoo](item) and [conditioner](item)
+    - we need more [towels](item), [pillows](item), and [blankets](item)
 - intent: need_urgent
   examples: |
     - urgently

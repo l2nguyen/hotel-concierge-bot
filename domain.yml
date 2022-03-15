@@ -8,6 +8,7 @@ intents:
 - thank
 - greet
 - request_clean_room
+- request_item
 - need_urgent
 - schedule_time
 - inform_room_number
@@ -17,6 +18,7 @@ intents:
 - bot_challenge
 entities:
 - room_number
+- item_requested
 slots:
   room_number:
     type: text
@@ -24,6 +26,12 @@ slots:
     mappings:
     - type: from_entity
       entity: room_number
+  items_requested:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: item
 responses:
   utter_greet:
   - text: Hello, I am the Acorn Hotel's virtual assistant. How can I help?
@@ -39,7 +47,7 @@ responses:
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_clean_room:
-  - text: When do you want you room to be cleaned?
+  - text: When do you want your room to be cleaned?
   utter_rightaway:
   - text: Ok, we will take care of that right away.
   - text: Ok, we will send someone to take care of this right away.
@@ -48,10 +56,12 @@ responses:
   utter_ask_room_number:
   - text: What is your room number please?
   - text: Can I have your room number please?
+  utter_ask_items_requested:
+  - text: What would you like to be brought to your room?
   utter_faq/ask_check_in_time:
   - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
   utter_faq/ask_check_out_time:
-  - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage for you at the reception.
+  - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage for you at the reception if you need.
   utter_faq/ask_have_gym:
   - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
   utter_faq/ask_have_restaurant:
@@ -60,7 +70,7 @@ responses:
        1) Mezze is a Mediterranean restaurant. It can be found on the hotel's ground floor. 
        2) Rasa is an Indian restaurant. It can be found on the hotel's top floor.
   utter_faq/ask_breakfast_info:
-  - text: Breakfast is included with your room. It is served in Mezze, the ground floor restaurant. From Mondays to Fridays, breakfast is served from 7:00 AM - 11:00 AM. On Saturdays and Sundays, it is served from 8:00 AM - 12:00 PM
+  - text: The hotel provides its guests with free breakfast every morning. It is served in Mezze, the ground floor restaurant. From Mondays to Fridays, breakfast is served from 7:00 AM - 11:00 AM. On Saturdays and Sundays, it is served from 8:00 AM - 12:00 PM
 actions:
 - utter_anythingelse
 - utter_ask_room_number
@@ -73,3 +83,8 @@ actions:
 - utter_noproblem
 - utter_rightaway
 - utter_schedule_time
+forms:
+  item_request_form:
+    required_slots:
+      - room_number
+      - items_requested
