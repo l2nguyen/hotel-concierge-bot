@@ -15,3 +15,9 @@ rules:
   steps:
   - intent: faq
   - action: utter_faq
+
+- rule: activate item request form
+  steps:
+  - intent: request_item
+  - action: item_request_form
+  - active_loop: item_request_form

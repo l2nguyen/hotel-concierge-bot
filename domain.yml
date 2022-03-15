@@ -18,7 +18,7 @@ intents:
 - bot_challenge
 entities:
 - room_number
-- item_requested
+- item
 slots:
   room_number:
     type: text
@@ -65,12 +65,16 @@ responses:
   utter_faq/ask_have_gym:
   - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
   utter_faq/ask_have_restaurant:
-  - text: |
+  - text: |-
       The hotel has two restaurants:
        1) Mezze is a Mediterranean restaurant. It can be found on the hotel's ground floor. 
        2) Rasa is an Indian restaurant. It can be found on the hotel's top floor.
   utter_faq/ask_breakfast_info:
-  - text: The hotel provides its guests with free breakfast every morning. It is served in Mezze, the ground floor restaurant. From Mondays to Fridays, breakfast is served from 7:00 AM - 11:00 AM. On Saturdays and Sundays, it is served from 8:00 AM - 12:00 PM
+  - text: |-
+      The hotel offers its guests free breakfast every morning. It is served in Mezze, the ground floor restaurant.
+      The hours for breakfast are:
+        Mondays to Fridays: 7:00-11:00 
+        Saturdays and Sundays: 8:00-13:00
 actions:
 - utter_anythingelse
 - utter_ask_room_number
