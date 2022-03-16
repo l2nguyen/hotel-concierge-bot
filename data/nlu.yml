@@ -127,6 +127,7 @@ nlu:
     - i want to check out late
     - late check out
     - how late can i check out?
+    - i would like to check out late
 - intent: need_urgent
   examples: |
     - urgently
@@ -207,6 +208,16 @@ nlu:
     - can i find a restaurnat here?
     - can you tell me about the restaurant in the hotel?
     - is there a restaurant in this hotel?
+- intent: faq/ask_have_pool
+  examples: |
+    - is there a pool?
+    - do you have a pool?
+    - does the hotel have a pool?
+    - where is the pool in the hotel?
+    - where can i find the pool?
+    - tell me about the pool
+    - when is the pool open?
+    - what time is the pool open?
 - intent: faq/ask_breakfast_info
   examples: |
     - is breakfast included?

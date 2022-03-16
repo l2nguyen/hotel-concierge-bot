@@ -71,7 +71,7 @@ responses:
   utter_faq/ask_check_out_time:
   - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage after you checkout at the reception if you need it.
   utter_faq/ask_have_gym:
-  - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
+  - text: The gym can be found on the ground floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
   utter_faq/ask_have_restaurant:
   - text: |-
       The hotel has two restaurants:
@@ -83,12 +83,14 @@ responses:
       The hours for breakfast are:
         Mondays to Fridays: 7 AM-11 AM 
         Saturdays and Sundays: 8 AM-1 PM
+  utter_faq/ask_have_pool:
+  - text: The hotel's pool can be found near the gym on the ground floor. The pool is open 8 AM to 10 PM every day.
   utter_late_checkout:
   - text: Late checkout is subject to availability. If occupancy allows it, our guests can have late checkout until 2 PM free of charge. After 2 PM, the fee will be 10 EUR/room/hour. Would you like to request a late checkout?
+  utter_late_checkout_time:
+  - text: I have recorded your request to checkout late at {late_checkout_time}.
   utter_submit:
-  - text: OK. Got it.
-  
-
+  - text: OK. Got it. Thanks.
   utter_letmecheck:
   - text: Let me check if that is available.
   utter_possible:
