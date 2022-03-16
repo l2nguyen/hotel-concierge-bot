@@ -84,7 +84,7 @@ responses:
         Mondays to Fridays: 7 AM-11 AM 
         Saturdays and Sundays: 8 AM-1 PM
   utter_faq/ask_have_pool:
-  - text: The hotel's pool can be found near the gym on the ground floor. The pool is open 8 AM to 10 PM every day.
+  - text: The hotel's pool can be found on the ground floor near the gym. The pool is open 8 AM to 10 PM every day.
   utter_late_checkout:
   - text: Late checkout is subject to availability. If occupancy allows it, our guests can have late checkout until 2 PM free of charge. After 2 PM, the fee will be 10 EUR/room/hour. Would you like to request a late checkout?
   utter_late_checkout_time:
