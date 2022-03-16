@@ -9,6 +9,7 @@ intents:
 - greet
 - request_clean_room
 - request_item
+- request_late_checkout
 - need_urgent
 - schedule_time
 - inform_room_number
@@ -19,6 +20,7 @@ intents:
 entities:
 - room_number
 - item
+- late_checkout_time
 slots:
   room_number:
     type: text
@@ -32,6 +34,12 @@ slots:
     mappings:
     - type: from_entity
       entity: item
+  late_checkout_time:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: late_checkout_time
 responses:
   utter_greet:
   - text: Hello, I am the Acorn Hotel's virtual assistant. How can I help?
@@ -61,7 +69,7 @@ responses:
   utter_faq/ask_check_in_time:
   - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
   utter_faq/ask_check_out_time:
-  - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage for you at the reception if you need.
+  - text: Check out is by 11 AM on your departure date. Our team is happy to store your luggage after you checkout at the reception if you need it.
   utter_faq/ask_have_gym:
   - text: The gym can be found on the fifth floor. It is open to our guests 24 hours a day every day. Simply use your room key card to gain entry.
   utter_faq/ask_have_restaurant:
@@ -73,8 +81,20 @@ responses:
   - text: |-
       The hotel offers its guests free breakfast every morning. It is served in Mezze, the ground floor restaurant.
       The hours for breakfast are:
-        Mondays to Fridays: 7:00-11:00 
-        Saturdays and Sundays: 8:00-13:00
+        Mondays to Fridays: 7 AM-11 AM 
+        Saturdays and Sundays: 8 AM-1 PM
+  utter_late_checkout:
+  - text: Late checkout is subject to availability. If occupancy allows it, our guests can have late checkout until 2 PM free of charge. After 2 PM, the fee will be 10 EUR/room/hour. Would you like to request a late checkout?
+  utter_submit:
+  - text: OK. Got it.
+  
+
+  utter_letmecheck:
+  - text: Let me check if that is available.
+  utter_possible:
+  - text: Yep, we can do that for you.
+  utter_notpossible:
+  - text: Unfortunately, we are unable accomodate your request. Sorry.
 actions:
 - utter_anythingelse
 - utter_ask_room_number
@@ -85,10 +105,18 @@ actions:
 - utter_greet
 - utter_heretohelp
 - utter_noproblem
+- utter_letmecheck
 - utter_rightaway
 - utter_schedule_time
+- utter_late_checkout
+- utter_possible
+- utter_notpossible
 forms:
   item_request_form:
     required_slots:
       - room_number
       - items_requested
+  late_checkout_form:
+    required_slots:
+      - room_number
+      - late_checkout_time
