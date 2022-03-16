@@ -118,6 +118,15 @@ nlu:
     - we need another [pillow](item)
     - we want more [shampoo](item) and [conditioner](item)
     - we need more [towels](item), [pillows](item), and [blankets](item)
+- intent: request_late_checkout
+  examples: |
+    - is late check out possible?
+    - can i check out late?
+    - what are the fees for late check out?
+    - is there a fee for late check?
+    - i want to check out late
+    - late check out
+    - how late can i check out?
 - intent: need_urgent
   examples: |
     - urgently

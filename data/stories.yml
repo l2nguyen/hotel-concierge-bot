@@ -13,7 +13,7 @@ stories:
   - action: utter_noproblem
 
 # === SERVICES > todo: move into another file
-- story: request - clean room at specified time 
+- story: clean room at specified time 
   steps:
   - intent: request_clean_room
   - action: utter_clean_room
@@ -29,7 +29,7 @@ stories:
   - intent: deny
   - action: utter_heretohelp
 
-- story: request - clean room now
+- story: clean room now
   steps:
   - intent: greet
   - action: utter_greet
@@ -44,3 +44,35 @@ stories:
     - room_number: '10'
   - action: utter_rightaway
   - action: utter_anythingelse
+
+- story: late checkout - info only
+  steps:
+  - intent: request_late_checkout
+  - action: utter_late_checkout
+  - intent: deny
+  - action: utter_anythingelse
+  - intent: deny
+
+- story: late checkout - guest requests and available
+  steps:
+  - intent: request_late_checkout
+  - action: utter_late_checkout
+  - intent: affirm
+  - action: utter_letmecheck
+  # to do: add a check for occupancy
+  - action: utter_possible
+  - action: late_checkout_form
+  - active_loop: late_checkout_form
+  - slot_was_set:
+    - requested_slot: room_number
+  - slot_was_set:
+    - room_number: 510
+  - slot_was_set:
+    - requested_slot: late_checkout_time
+  - slot_was_set:
+    - late_checkout_time: 6 PM
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_late_checkout_time
