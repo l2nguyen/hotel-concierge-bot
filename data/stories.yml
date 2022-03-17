@@ -44,9 +44,10 @@ stories:
   - action: utter_rightaway
   - action: utter_anythingelse
 
-- story: request item - all ino ne go
+- story: request item - all in one go
   steps:
   - intent: request_item
+  - action: item_request_form
   - active_loop: item_request_form
   - slot_was_set:
     - requested_slot: room_number
@@ -71,6 +72,7 @@ stories:
   - intent: deny
   - action: utter_anythingelse
   - intent: deny
+  - action: utter_heretohelp
 
 - story: late checkout - guest requests and available
   steps:
