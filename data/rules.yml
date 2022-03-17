@@ -21,3 +21,13 @@ rules:
   - intent: request_item
   - action: item_request_form
   - active_loop: item_request_form
+
+- rule: Submit item request form
+  condition:
+  - active_loop: item_request_form
+  steps:
+  - action: item_request_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit

@@ -1,7 +1,6 @@
 version: "3.0"
 
 stories:
-
 - story: greet user
   steps:
   - intent: greet
@@ -39,11 +38,31 @@ stories:
   - action: utter_ask_room_number
   - intent: inform_room_number
     entities:
-    - room_number: '10'
+    - room_number: '808'
   - slot_was_set:
-    - room_number: '10'
+    - room_number: '808'
   - action: utter_rightaway
   - action: utter_anythingelse
+
+- story: request item - all ino ne go
+  steps:
+  - intent: request_item
+  - active_loop: item_request_form
+  - slot_was_set:
+    - requested_slot: room_number
+  - slot_was_set:
+    - room_number: 1008
+  - slot_was_set:
+    - requested_slot: items_requested
+  - slot_was_set:
+    - items_requested: ["towels", "pillows"]
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_items_requested
+  - intent: affirm
+  - action: utter_rightaway
 
 - story: late checkout - info only
   steps:
@@ -59,7 +78,7 @@ stories:
   - action: utter_late_checkout
   - intent: affirm
   - action: utter_letmecheck
-  # to do: add a check for occupancy
+  # to do: add a custom action to check for occupancy
   - action: utter_possible
   - action: late_checkout_form
   - active_loop: late_checkout_form
