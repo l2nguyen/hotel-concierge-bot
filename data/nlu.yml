@@ -227,3 +227,18 @@ nlu:
     - when is breakfast served?
     - do you serve breakfast?
     - does the hotel offer breakfast?
+- intent: out_of_scope/room_service
+  examples: |
+    - can i order room service?
+    - i want to order room service
+    - i want to order food to my room
+    - can you do room service?
+- intent: out_of_scope/other
+  examples: |
+    - what is the meaning of life?
+    - what is the square root of 5
+    - ofif fsdfafsfs
+    - blah blah blah
+    - can you make sandwiches?
+    - tell me a joke
+
