@@ -1,0 +1,153 @@
+{
+	'intent': {
+		'name': 'faq',
+		'confidence': 0.9999998807907104
+	},
+	'entities': [
+	],
+	'text': 'where is the pool?',
+	'message_id': '6305d6aa5f52406094fe00fa66e10ea9',
+	'metadata': {
+	},
+	'text_tokens': [
+		[
+			0,
+			5
+		],
+		[
+			6,
+			8
+		],
+		[
+			9,
+			12
+		],
+		[
+			13,
+			17
+		]
+	],
+	'intent_ranking': [
+		{
+			'name': 'faq',
+			'confidence': 0.9999998807907104
+		},
+		{
+			'name': 'request_clean_room',
+			'confidence': 3.534759684953315e-08
+		},
+		{
+			'name': 'bot_challenge',
+			'confidence': 1.887633871433536e-08
+		},
+		{
+			'name': 'schedule_time',
+			'confidence': 1.840674102027151e-08
+		},
+		{
+			'name': 'request_item',
+			'confidence': 1.3086035366427495e-08
+		},
+		{
+			'name': 'need_urgent',
+			'confidence': 1.0759394264425737e-08
+		},
+		{
+			'name': 'inform_room_number',
+			'confidence': 9.759184571578317e-09
+		},
+		{
+			'name': 'affirm',
+			'confidence': 8.478765245456543e-09
+		},
+		{
+			'name': 'thank',
+			'confidence': 7.682223746030559e-09
+		},
+		{
+			'name': 'deny',
+			'confidence': 6.976583311057993e-09
+		}
+	],
+	'response_selector': {
+		'all_retrieval_intents': [
+			'faq'
+		],
+		'default': {
+			'response': {
+				'responses': [
+					{
+						'text': "The hotel's pool can be found on the ground floor near the gym. The pool is open 8 AM to 10 PM every day."
+					}
+				],
+				'confidence': 1.0,
+				'intent_response_key': 'faq/ask_have_pool',
+				'utter_action': 'utter_faq/ask_have_pool'
+			},
+			'ranking': [
+				{
+					'confidence': 1.0,
+					'intent_response_key': 'faq/ask_have_pool'
+				},
+				{
+					'confidence': 1.1425279389243315e-08,
+					'intent_response_key': 'faq/ask_breakfast_info'
+				},
+				{
+					'confidence': 3.371442902633248e-09,
+					'intent_response_key': 'faq/ask_check_out_time'
+				},
+				{
+					'confidence': 1.6495692589657551e-09,
+					'intent_response_key': 'faq/ask_have_gym'
+				},
+				{
+					'confidence': 6.835771948487945e-10,
+					'intent_response_key': 'faq/ask_have_restaurant'
+				},
+				{
+					'confidence': 2.0442779413709644e-10,
+					'intent_response_key': 'faq/ask_check_in_time'
+				}
+			]
+		},
+		'faq': {
+			'response': {
+				'responses': [
+					{
+						'text': "The hotel's pool can be found on the ground floor near the gym. The pool is open 8 AM to 10 PM every day."
+					}
+				],
+				'confidence': 1.0,
+				'intent_response_key': 'faq/ask_have_pool',
+				'utter_action': 'utter_faq/ask_have_pool'
+			},
+			'ranking': [
+				{
+					'confidence': 1.0,
+					'intent_response_key': 'faq/ask_have_pool'
+				},
+				{
+					'confidence': 3.5530643097830827e-12,
+					'intent_response_key': 'faq/ask_check_out_time'
+				},
+				{
+					'confidence': 1.3179886869385538e-13,
+					'intent_response_key': 'faq/ask_check_in_time'
+				},
+				{
+					'confidence': 5.3701799520416486e-17,
+					'intent_response_key': 'faq/ask_have_gym'
+				},
+				{
+					'confidence': 1.7250105144290563e-18,
+					'intent_response_key': 'faq/ask_breakfast_info'
+				},
+				{
+					'confidence': 2.5578492996541978e-23,
+					'intent_response_key': 'faq/ask_have_restaurant'
+				}
+			]
+		}
+	}
+}
