@@ -68,13 +68,9 @@ class ValidateItemRequestForm(FormValidationAction):
     
         items = slot_value
         
-        print(items)
-        
+        # check items requested against possible items
         not_available = list(set(items).difference(possible_items))
         available = list(set(items).intersection(possible_items))
-        
-        print("available: {}".format(available))
-        print("not available: {}".format(not_available))
         
         if len(not_available)==len(items):
             dispatcher.utter_message(text="Unfortunately, the items you requested are not available.")
