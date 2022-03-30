@@ -99,6 +99,10 @@ responses:
   - text: Yep, we can do that for you.
   utter_notpossible:
   - text: Unfortunately, we are unable accomodate your request. Sorry.
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_default:
+  - text: I'm sorry, I can't help you.
 actions:
 - validate_item_request_form
 forms:

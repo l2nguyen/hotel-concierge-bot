@@ -1,15 +1,8 @@
-# The config recipe.
-# https://rasa.com/docs/rasa/model-configuration/
 recipe: default.v1
 
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
 language: en
 
 pipeline:
-# No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
-# If you'd like to customize it, uncomment and adjust the pipeline.
-# See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -31,15 +24,13 @@ pipeline:
     epochs: 100
     retrieval_intent: faq
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
 policies:
   - name: MemoizationPolicy
   - name: RulePolicy
   - name: UnexpecTEDIntentPolicy
     max_history: 5
-    epochs: 100
+    epochs: 50
   - name: TEDPolicy
     max_history: 5
-    epochs: 100
+    epochs: 50
     constrain_similarities: true
