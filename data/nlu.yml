@@ -118,6 +118,8 @@ nlu:
     - we need another [pillow](item)
     - we want more [shampoo](item) and [conditioner](item)
     - we need more [towels](item), [pillows](item), and [blankets](item)
+    - i need things brought to my room
+    - [towels](item), [shampoo](item), [conditioner](item)
 - intent: request_late_checkout
   examples: |
     - is late check out possible?
@@ -168,6 +170,7 @@ nlu:
     - room [310](room_number)
     - it is [602](room_number)
     - [10](room_number)
+    - [204](room_number)
 - intent: faq/ask_check_in_time
   examples: |
     - when is check in time?
@@ -227,18 +230,3 @@ nlu:
     - when is breakfast served?
     - do you serve breakfast?
     - does the hotel offer breakfast?
-- intent: out_of_scope/room_service
-  examples: |
-    - can i order room service?
-    - i want to order room service
-    - i want to order food to my room
-    - can you do room service?
-- intent: out_of_scope/other
-  examples: |
-    - what is the meaning of life?
-    - what is the square root of 5
-    - ofif fsdfafsfs
-    - blah blah blah
-    - can you make sandwiches?
-    - tell me a joke
-
