@@ -3,24 +3,24 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- request_item
+- greet
+- inform_room_number
 - faq:
     is_retrieval_intent: true
 - thank
-- greet
 - request_clean_room
-- request_item
 - request_late_checkout
 - need_urgent
 - schedule_time
-- inform_room_number
 - goodbye
 - affirm
 - deny
 - bot_challenge
 entities:
-- room_number
 - item
 - late_checkout_time
+- room_number
 slots:
   room_number:
     type: text
@@ -28,12 +28,14 @@ slots:
     mappings:
     - type: from_entity
       entity: room_number
+    - type: from_text
   items_requested:
     type: list
     influence_conversation: false
     mappings:
     - type: from_entity
       entity: item
+    - type: from_text
   late_checkout_time:
     type: any
     influence_conversation: false
@@ -66,8 +68,6 @@ responses:
   - text: Can I have your room number please?
   utter_ask_items_requested:
   - text: What would you like to be brought to your room?
-  utter_items_requested:
-  - text: To confirm, you wanted {items_requested} brought to your room. Is that correct?
   utter_faq/ask_check_in_time:
   - text: Check in starts at 3 PM. Please contact the reception to request an early check-in.
   utter_faq/ask_check_out_time:
@@ -102,12 +102,11 @@ responses:
 actions:
 - validate_item_request_form
 forms:
-# todo: simplify by making a form for all requests? add custom action
   item_request_form:
     required_slots:
-      - room_number
-      - items_requested
+    - room_number
+    - items_requested
   late_checkout_form:
     required_slots:
-      - room_number
-      - late_checkout_time
+    - room_number
+    - late_checkout_time

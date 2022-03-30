@@ -52,3 +52,36 @@ class ValidateItemRequestForm(FormValidationAction):
             dispatcher.utter_message(text="I think there is a typo somewhere. That's not a room in this hotel.")
             return {"room_number": None}
         
+    def validate_items_requested(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        
+        # check items requested against possible items
+        possible_items = ["towels", "toothpaste", "razor", 
+                          "shampoo", "conditioner", "blankets", 
+                          "pillows", "hairdryer", "water"]
+    
+    
+        items = slot_value
+        
+        print(items)
+        
+        not_available = list(set(items).difference(possible_items))
+        available = list(set(items).intersection(possible_items))
+        
+        print("available: {}".format(available))
+        print("not available: {}".format(not_available))
+        
+        if len(not_available)==len(items):
+            dispatcher.utter_message(text="Unfortunately, the items you requested are not available.")
+        elif len(not_available)>0:
+            dispatcher.utter_message(text="Unfortunately, we do not have {}. But we will bring you the other items.".format(", ".join(not_available)))
+            return {"items_requested": available}
+        else:
+            dispatcher.utter_message(text="OK. We will bring {} to your room.".format(", ".join(available)))
+            return {"items_requested": available}
+        
